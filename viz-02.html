@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+<title>Primera</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+<script>
+    var datos = [
+  {
+    designation: "419880 (2011 AH37)",
+    discovery_date: "2011-01-07T00:00:00.000",
+    h_mag: "19.7",
+    i_deg: "9.65",
+    moid_au: "0.035",
+    orbit_class: "Apollo",
+    period_yr: "4.06",
+    pha: "Y",
+    q_au_1: "0.84",
+    q_au_2: "4.26"
+  },
+  {
+    designation: "419624 (2010 SO16)",
+    discovery_date: "2010-09-17T00:00:00.000",
+    h_mag: "20.5",
+    i_deg: "14.52",
+    moid_au: "0.028",
+    orbit_class: "Apollo",
+    period_yr: "1",
+    pha: "Y",
+    q_au_1: "0.93",
+    q_au_2: "1.08"
+  },
+  {
+    designation: "414772 (2010 OC103)",
+    discovery_date: "2010-07-28T00:00:00.000",
+    h_mag: "19",
+    i_deg: "23.11",
+    moid_au: "0.333",
+    orbit_class: "Apollo",
+    period_yr: "1.31",
+    pha: "N",
+    q_au_1: "0.39",
+    q_au_2: "2"
+  },
+  {
+    designation: "414746 (2010 EH20)",
+    discovery_date: "2010-03-06T00:00:00.000",
+    h_mag: "18",
+    i_deg: "23.89",
+    moid_au: "0.268",
+    orbit_class: "Amor",
+    period_yr: "4.24",
+    pha: "N",
+    q_au_1: "1.25",
+    q_au_2: "3.99"
+  },
+  {
+    designation: "407324 (2010 OB101)",
+    discovery_date: "2010-07-18T00:00:00.000",
+    h_mag: "20.7",
+    i_deg: "9.12",
+    moid_au: "0.111",
+    orbit_class: "Apollo",
+    period_yr: "2.06",
+    pha: "N",
+    q_au_1: "0.77",
+    q_au_2: "2.46"
+  }
+];
+function setup(){
+  var canvas = createCanvas(windowWidth,500);
+  canvas.position(0,0)
+  noStroke();
+  smooth();
+}
+function draw(){
+  background(30, 40, 50);
+  fill(255);
+    /*Primer asterioide*/
+    //tamaño y nombre
+    textAlign(CENTER);
+    rotate(radians(datos[0].i_deg));
+    ellipse (200, windowHeight/2-20, datos[0].h_mag*3, datos[0].h_mag*2);
+    rotate(radians(-datos[0].i_deg));
+    text(datos[0].designation, 150, windowHeight/2+50);
+        /*segundo asterioide*/
+     rotate(radians(datos[1].i_deg));
+     ellipse (400, windowHeight/2-100, datos[1].h_mag*3, datos[1].h_mag*2);
+    rotate(radians(-datos[1].i_deg));
+    text(datos[1].designation, 350, windowHeight/2+50);
+        /*tercer asteroide*/
+      rotate(radians(datos[2].i_deg));
+    ellipse (600, windowHeight/2-250, datos[2].h_mag*3, datos[2].h_mag*2);
+      rotate(radians(-datos[2].i_deg));
+    text(datos[2].designation, 550, windowHeight/2+50);
+        /*cuarto asteroide*/
+      rotate(radians(datos[3].i_deg));
+    ellipse (800, windowHeight/2-350, datos[3].h_mag*3, datos[3].h_mag*2);
+      rotate(radians(-datos[3].i_deg));
+    text(datos[3].designation, 750, windowHeight/2+50);
+        /*quinto asteroide*/
+      rotate(radians(datos[4].i_deg));
+    ellipse (980, windowHeight/2-150, datos[4].h_mag*3, datos[4].h_mag*2);
+      rotate(radians(-datos[4].i_deg));
+    text(datos[4].designation, 950, windowHeight/2+50);
+} 
+function windowResized() {
+  resizeCanvas(windowWidth, 500);
+        
+}   
+</script>
+</body>
+</html>
