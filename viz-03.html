@@ -27,18 +27,17 @@
         }
         function draw() {
           background(28,49,68);
-            var cantidad = data.getRowCount();
-            for (var a = 0; a < edad; a++) {
-              var victimas = data.get(a, 1);
-              var victimario = data.get(a, 2);
-              if (victimas > 0){
-                fill(0);
+            var numero = data.getRowCount();
+            for (var a = 0; a < numero; a++) {
+              var periodo = data.get(a, 2);
+              var cantidad = data.get(a, 3);
+            if (cantidad > 0) {
+              fill(255);
                 textAlign(CENTER);
-                textSize(9);
-                text(".\n"+a,(width/edad)*a,height/3)
+                textSize(10);
+                text(periodo,(a*100)-500,height/2)
               }
-              fill(255,map(victimas,0,10,75,150));
-              ellipse((width/edad)*a,height/3,2*(victimas+1),2*(victimas+1));
+              ellipse((a*100)-500,height/3,(cantidad+1)*0.0005,(cantidad+1)*0.0005);
             }
         }
         function windowResized() {
